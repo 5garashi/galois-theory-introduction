@@ -26,11 +26,6 @@ In particular, the point is not that "the quintic equation has no solution," but
 
 This is written for readers who know the quadratic formula (high-school level) but have little to no background in abstract algebra (university level).
 
-## Structure of the material
-
-1. Computing the Galois group (relation between roots and coefficients → permutations → basis of the splitting field → composition series)
-2. Solving solvable algebraic equations (field extension and computing the roots)
-
 ## Where this is published
 
 The PDF, the PowerPoint source, the changelog, and an issue tracker for error reports are all published on GitHub.
