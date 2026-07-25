@@ -29,8 +29,8 @@ docs/    手法まとめ
 
 ## PDF
 
-- 日本語版: [pdf/galois_theory_intro_ja_v1_11.pdf](https://github.com/5garashi/galois-theory-introduction/releases/download/v1.11/galois_theory_intro_ja_v1_11.pdf)
-- English: [pdf/galois_theory_intro_en_v1_11.pdf](https://github.com/5garashi/galois-theory-introduction/releases/download/v1.11/galois_theory_intro_en_v1_11.pdf)
+- 日本語版: [pdf/galois_theory_intro_ja_v1_12.pdf](https://github.com/5garashi/galois-theory-introduction/releases/download/v1.12/galois_theory_intro_ja_v1_12.pdf)
+- English: [pdf/galois_theory_intro_en_v1_12.pdf](https://github.com/5garashi/galois-theory-introduction/releases/download/v1.12/galois_theory_intro_en_v1_12.pdf)
 
 ## 解説文書
 
@@ -51,4 +51,4 @@ Copyright 2026 5garashi.com設計事務所
 ---
 
 **作成者**: 5garashi.com設計事務所
-**最終更新**: 2026-07-25 JST
+**最終更新**: 2026-07-26 JST
