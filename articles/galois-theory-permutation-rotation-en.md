@@ -22,7 +22,7 @@ So, for beginners, I wrote a PDF resource that explains the theory along the fol
 
 This material is not meant as a rigorous, proof-oriented textbook, but as an introductory resource for grasping the overall picture of Galois theory intuitively.
 
-In particular, the point is not that "the quintic equation has no solution," but that **"there is no single formula, using only the four arithmetic operations and radicals, that solves the general quintic equation"** (individual quintic equations can still be solvable by radicals).
+Viewing the Galois group as "permitted permutations," and field extension as "equal division of the rotation angle," is what reveals the real point: not that "the quintic equation has no solution," but that **"there is no single formula, using only the four arithmetic operations and radicals, that solves the general quintic equation"** (individual quintic equations can still be solvable by radicals).
 
 ## Intended audience
 
