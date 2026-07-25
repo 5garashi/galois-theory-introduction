@@ -3,8 +3,10 @@ title: "Seeing Galois Theory as Permitted \"Permutations\" and \"Rotation Angles
 emoji: "📘"
 type: "idea"
 topics: ["Mathematics", "GaloisTheory", "Algebra", "Beginner"]
-published: false
+published: true
 ---
+
+[🇯🇵 日本語](https://zenn.dev/5garashi_com/articles/galois-theory-roots-permutation) | 🇺🇸 English
 
 Galois theory tends to be intimidating right at the entrance, with terms like fields, groups, automorphisms, and normal subgroups appearing one after another.
 

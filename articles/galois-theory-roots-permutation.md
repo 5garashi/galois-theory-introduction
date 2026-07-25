@@ -6,6 +6,8 @@ topics: ["数学", "ガロア理論", "代数学", "初心者"]
 published: true
 ---
 
+🇯🇵 日本語 | [🇺🇸 English](https://zenn.dev/5garashi_com/articles/galois-theory-permutation-rotation-en)
+
 ガロア理論というと、体、群、自己同型、正規部分群などの言葉が並び、最初の入口でつまずきやすい分野だと思います。
 
 そこで、初心者向けに、
