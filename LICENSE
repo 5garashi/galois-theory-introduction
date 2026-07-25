@@ -15,6 +15,5 @@ Summary (this summary is not a substitute for the license itself):
                     you may not distribute the modified material.
 
 This license applies to all files in this repository — including PDF
-documents, presentation source files (pptx), documentation (docs/), and
-source code (tools/) — unless a different license is stated in an
-individual file.
+documents, presentation source files (pptx), and documentation (docs/) —
+unless a different license is stated in an individual file.

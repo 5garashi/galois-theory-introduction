@@ -1011,26 +1011,3 @@ A₅ をこれ以上分解できない
 ```
 
 A₅ の「単純性」こそが5次以上の一般方程式の根号解を阻む根本的な理由です。
-
----
-
-## 付録: Python プログラム (`galois_solver.py`) の対応表
-
-| PDF § | 内容 | 関数名 |
-|-------|------|--------|
-| §1 | 根と係数の関係 | `root_and_coefficient()` |
-| §2 | 次数低減 | `reduction_of_X(f)` |
-| §3 | n! 個の置換 | `build_sigma()` |
-| §4 | 原始要素・最小多項式 | `primitive_element()` / `minimal_polynomial_select()` |
-| §5 | 分解体の基底 | `basis_of_splitting_field()` |
-| §6 | X[i] の v による表現 | `power_of_v()` / `x_of_v()` |
-| §7 | ガロア群 | `galois_group()` |
-| §8 | 乗積表・逆元 | `product_of_G()` |
-| §9 | 組成列 | `composition_series()` |
-| §11 | 体の元の計算 | `reduction_of_alpha()` / `frac_to_poly()` |
-| §12 | 体の拡大・次数低減 | `solve_by_galois()` / `pth_root()` |
-| §13 | 根の計算 | `solve_by_galois()` 末尾 |
-
----
-
-*作成: 2026-06-08*
