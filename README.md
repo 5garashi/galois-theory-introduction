@@ -29,8 +29,8 @@ docs/    手法まとめ
 
 ## PDF
 
-- 日本語版: `pdf/galois_theory_intro_ja_v1_11.pdf`
-- English: `pdf/galois_theory_intro_en_v1_11.pdf`
+- 日本語版: [pdf/galois_theory_intro_ja_v1_11.pdf](https://github.com/5garashi/galois-theory-introduction/releases/download/v1.11/galois_theory_intro_ja_v1_11.pdf)
+- English: [pdf/galois_theory_intro_en_v1_11.pdf](https://github.com/5garashi/galois-theory-introduction/releases/download/v1.11/galois_theory_intro_en_v1_11.pdf)
 
 ## 解説文書
 

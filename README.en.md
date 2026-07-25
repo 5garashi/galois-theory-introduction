@@ -29,8 +29,8 @@ docs/    Method summaries (Japanese only)
 
 ## PDF
 
-- Japanese: `pdf/galois_theory_intro_ja_v1_11.pdf`
-- English: `pdf/galois_theory_intro_en_v1_11.pdf`
+- Japanese: [pdf/galois_theory_intro_ja_v1_11.pdf](https://github.com/5garashi/galois-theory-introduction/releases/download/v1.11/galois_theory_intro_ja_v1_11.pdf)
+- English: [pdf/galois_theory_intro_en_v1_11.pdf](https://github.com/5garashi/galois-theory-introduction/releases/download/v1.11/galois_theory_intro_en_v1_11.pdf)
 
 ## Explanatory documents
 
