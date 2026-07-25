@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+galois_cache.json
+*.zip
+.DS_Store
