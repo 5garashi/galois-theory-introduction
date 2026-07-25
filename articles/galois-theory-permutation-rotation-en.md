@@ -1,5 +1,5 @@
 ---
-title: "Galois Theory Through \"Permitted Permutations\" and \"Equal Division of the Rotation Angle\" — Why the General Quintic Has No Radical Formula"
+title: "Seeing Galois Theory as Permitted \"Permutations\" and \"Rotation Angles\""
 emoji: "📘"
 type: "idea"
 topics: ["Mathematics", "GaloisTheory", "Algebra", "Beginner"]
