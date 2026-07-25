@@ -1,5 +1,5 @@
 ---
-title: "ガロア理論を「許される入れ替え」として見る — 一般の5次方程式に解の公式がない理由"
+title: "ガロア理論を「許される入れ替え」と「回転角の等分割」で見る — 一般の5次方程式に解の公式がない理由"
 emoji: "📘"
 type: "idea"
 topics: ["数学", "ガロア理論", "代数学", "初心者"]
@@ -33,11 +33,9 @@ published: true
 1. ガロア群の計算(根と係数の関係 → 置換 → 分解体の基底 → 組成列)
 2. 可解な代数方程式の解法(体の拡大と根の計算)
 
-PDFに加えて、PDF内のMathematicaプログラムをPython/sympyで実装したソルバー(`galois_solver.py`)も同じリポジトリに置いています。実際に方程式を入力してガロア群や根号表現を計算する過程を確認できます。
-
 ## 公開場所
 
-PDF本体、PowerPointソース、Pythonソルバー、更新履歴、誤り報告用のIssueはGitHubで公開しています。
+PDF本体、PowerPointソース、更新履歴、誤り報告用のIssueはGitHubで公開しています。
 
 https://github.com/5garashi/galois-theory-introduction
 
