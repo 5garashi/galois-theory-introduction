@@ -34,6 +34,8 @@ published: true
 
 PDF本体、PowerPointソース、更新履歴、誤り報告用のIssueはGitHubで公開しています。
 
-https://github.com/5garashi/galois-theory-introduction
+- PDF(日本語版): https://github.com/5garashi/galois-theory-introduction/releases/download/v1.11/galois_theory_intro_ja_v1_11.pdf
+- PDF(英語版): https://github.com/5garashi/galois-theory-introduction/releases/download/v1.11/galois_theory_intro_en_v1_11.pdf
+- リポジトリ: https://github.com/5garashi/galois-theory-introduction
 
 数学的な誤り、分かりにくい表現、よりよい説明案があれば、GitHub Issuesでご指摘いただけると助かります。
