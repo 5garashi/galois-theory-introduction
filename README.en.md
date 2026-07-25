@@ -24,7 +24,7 @@ The main themes are as follows.
 ```
 pdf/     PDF documents (Japanese and English)
 source/  Source data (PowerPoint)
-docs/    Beginner-friendly explanations and method summaries (Japanese only)
+docs/    Method summaries (Japanese only)
 ```
 
 ## PDF
@@ -34,7 +34,6 @@ docs/    Beginner-friendly explanations and method summaries (Japanese only)
 
 ## Explanatory documents
 
-- `docs/galois_theory_beginner.md`: beginner-friendly explanation (Japanese)
 - `docs/galois_pdf_method_chat_summary.md` / `.pdf`: method summary (Japanese)
 
 ## Corrections and suggestions

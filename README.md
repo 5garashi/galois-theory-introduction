@@ -24,7 +24,7 @@
 ```
 pdf/     PDF本体(日本語版・英語版)
 source/  元データ(PowerPoint)
-docs/    初心者向け解説・手法まとめ
+docs/    手法まとめ
 ```
 
 ## PDF
@@ -34,7 +34,6 @@ docs/    初心者向け解説・手法まとめ
 
 ## 解説文書
 
-- `docs/galois_theory_beginner.md` : 初心者向け解説
 - `docs/galois_pdf_method_chat_summary.md` / `.pdf` : 手法まとめ
 
 ## 誤り報告・改善提案

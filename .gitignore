@@ -4,3 +4,4 @@ galois_cache.json
 *.zip
 .DS_Store
 tools/
+docs/galois_theory_beginner.md
