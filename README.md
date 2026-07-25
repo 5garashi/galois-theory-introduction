@@ -30,12 +30,6 @@ docs/    初心者向け解説・手法まとめ
 - 日本語版: `pdf/galois_theory_intro_ja_v1_11.pdf`
 - English: `pdf/galois_theory_intro_en_v1_11.pdf`
 
-## ソルバー
-
-`tools/galois_solver.py` は、PDF「可解な代数方程式のガロア理論に基づいた解法」に
-掲載されたMathematicaプログラムをPython/sympyで実装したものです。
-詳細は `tools/galois_solver_README.md` を参照してください。
-
 ## 解説文書
 
 - `docs/galois_theory_beginner.md` : 初心者向け解説
