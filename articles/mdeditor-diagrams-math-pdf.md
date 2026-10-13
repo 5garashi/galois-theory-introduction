@@ -1,4 +1,11 @@
 ---
+# ファイル名 / File: articles/mdeditor-diagrams-math-pdf.md
+# 概要 / Description: mdEditor用途記事 / mdEditor use-case article
+# 作成者 / Author: 5garashi.com設計事務所 / 5garashi.com Design Office
+# 作成日 / Created: 2026-10-13
+# 版 / Version: 1.2.0
+# ライセンス / License: MIT
+# SPDX-License-Identifier: MIT
 title: "Markdownを読むためにVS Codeを開くのが面倒で、Windowsアプリを作った"
 emoji: ""
 type: "tech"
@@ -6,15 +13,6 @@ topics: ["markdown", "windows", "mermaid", "katex", "pdf"]
 published: false
 ---
 
-<!--
-ファイル名 / File: articles/mdeditor-diagrams-math-pdf.md
-概要 / Description: mdEditor用途記事 / mdEditor use-case article
-作成者 / Author: 5garashi.com設計事務所 / 5garashi.com Design Office
-作成日 / Created: 2026-10-13
-版 / Version: 1.2.0
-ライセンス / License: MIT
-SPDX-License-Identifier: MIT
--->
 
 Markdownファイルの中身をちょっと読みたい。必要なら数行だけ直したい。そのためにVS Codeを開き、図や数式を見るための拡張機能を用意するのが、私には少し面倒でした。
 
