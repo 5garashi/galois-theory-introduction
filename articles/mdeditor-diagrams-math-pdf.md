@@ -10,7 +10,7 @@ title: "Markdownを読むためにVS Codeを開くのが面倒で、Windowsア�
 emoji: ""
 type: "tech"
 topics: ["markdown", "windows", "mermaid", "katex", "pdf"]
-published: false
+published: true
 ---
 
 
