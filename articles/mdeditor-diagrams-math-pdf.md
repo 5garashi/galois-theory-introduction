@@ -3,7 +3,7 @@
 # 概要 / Description: mdEditor用途記事 / mdEditor use-case article
 # 作成者 / Author: 5garashi.com設計事務所 / 5garashi.com Design Office
 # 作成日 / Created: 2026-10-13
-# 版 / Version: 1.3.0
+# 版 / Version: 1.4.0
 # ライセンス / License: MIT
 # SPDX-License-Identifier: MIT
 title: "Markdownを読むためにVS Codeを開くのが面倒で、Windowsアプリを作った"
@@ -20,17 +20,17 @@ Markdownファイルの中身をちょっと読みたい。必要なら数行だ
 
 この記事では、実画面と短い技術メモを使って、図・数式の表示、別ウィンドウのプレビュー、PDF保存を紹介します。VS Codeとの速度やメモリ使用量の比較はしていません。ここで書くのは、私が普段のMarkdown閲覧で欲しかった使い方です。
 
-## 2026-10-16追記: 既存の資料を取り込み、整えて渡す
+## 2026-10-17更新: 既存の資料を取り込み、整えて渡す
 
-Word文書、Webページ、HTML、メール、CSV・TSV、JSON、Jupyter NotebookなどをMarkdownで開けるようになりました。主な追加は1.0.8、2026-10-16確認時の最新ソースは1.0.10です。
+Word文書、Webページ、HTML、メール、CSV・TSV、JSON、Jupyter NotebookなどをMarkdownで開けるようになりました。主な追加は1.0.8、2026-10-17確認時の最新ソースは1.0.10です。
 
-![mdEditor 1.0.8の実画面。Markdownの編集欄と、図・数式・表を含むプレビューを並べている。](https://raw.githubusercontent.com/5garashi/mdEditor/main/docs/images/1-main.ja.png)
+![mdEditor 1.0.10の実画面。Markdownの編集欄と図・数式・表を含むプレビュー。](https://5garashi.github.io/mdEditor/assets/app-ja.png)
 
 取り込んだ文章を編集し、「名前を付けて保存」のファイルの種類でWord・PDF・HTML・PNGを選んで渡せます。Wordには標準の見出しや表のスタイルが入り、図・数式は画像として入ります。画像の貼り付けやドラッグ＆ドロップにも対応しました。
 
 Wordからの取り込みは色や配置を再現するものではありません。Notebookを書き出す際、実行結果は含みません。Webページは「URLを開く」でhttpsのURLを指定します。外部画像は初期設定では読み込まず、確認してから取得します。取得先にはIPアドレスなどが伝わるため、詳しくは[プライバシーポリシー](https://github.com/5garashi/mdEditor/blob/main/PRIVACY.md)を参照してください。
 
-以下の旧画面・動画は1.0.5の記録です。新しい版ではPDF保存も「名前を付けて保存」にまとまり、短い文書のPDFに空白ページが増える問題は1.0.6で修正されています。追加機能と修正は[公式変更履歴](https://github.com/5garashi/mdEditor/blob/main/CHANGELOG.md)で確認しました。今回、新機能の操作試験やStoreの配信版番号の確認は行っていません。
+ソース版1.0.10を実際に操作し、Word・CSV・Webページの取り込み、図と数式の編集、Word・PDF・HTML・PNGへの書き出しを録画しました。[日本語の実演動画](https://www.youtube.com/watch?v=pXQqzLLf8FM)と[英語版](https://www.youtube.com/watch?v=FxBILEFQMQk)を公開しています。PDF保存は「名前を付けて保存」でPDFを選びます。Store配信バイナリでの録画ではなく、Storeの配信版番号は今回確認していません。
 
 ## まずはMarkdownを開いて読む
 
@@ -38,7 +38,7 @@ Wordからの取り込みは色や配置を再現するものではありませ�
 
 左にMarkdown、右に表示結果を並べて使います。見出しや表に加え、Mermaidの図、KaTeXの数式もプレビューできます。読んでいて気づいた箇所は、左側の文章を直して確認します。
 
-[Microsoft Storeから無料で入手](https://apps.microsoft.com/detail/9nww2qrclmhc?hl=ja-JP&gl=JP)できます。[使い方と操作実演](https://5garashi.github.io/mdEditor/)も用意しました。この記事の画面と手順はソース版1.0.5で確認しています。
+[Microsoft Storeから無料で入手](https://apps.microsoft.com/detail/9nww2qrclmhc?hl=ja-JP&gl=JP)できます。[使い方と操作実演](https://5garashi.github.io/mdEditor/)も用意しました。主画面と新しい実演はソース版1.0.10です。別ウィンドウの画像は下記の旧記録です。
 
 ## 図と数式を含む小さなメモで試す
 
@@ -94,7 +94,7 @@ flowchart LR
 ## PDFにして渡す
 
 1. 「保存」で編集したMarkdownを保存する。
-2. 「名前を付けて保存」でPDFを選び、保存先を指定する（旧1.0.5では「PDFに保存」）。
+2. 「名前を付けて保存」でファイルの種類にPDFを選び、保存先を指定する。
 3. 保存したPDFを開く。
 4. 見出し・図・数式・表が含まれること、文章の切れや不要なページがないかを確認する。
 
@@ -108,7 +108,7 @@ flowchart LR
 - [KaTeX公式資料](https://katex.org/docs/supported.html): 表示できる数式の記法。
 - [mdEditorのソースと使い方](https://github.com/5garashi/mdEditor)。
 
-本稿の手順と画像は、変更していないソース版1.0.5で確認しています。Storeの提供版番号・認定状況は未確認です。価格は所有者の確認と掲載情報に基づき無料と記載しています。
+取り込み・編集・書き出しは、変更していないソース版1.0.10で2026-10-17に録画確認しました。別ウィンドウの画像は1.0.5の記録です。Storeの提供版番号・認定状況は未確認です。価格は所有者の確認と掲載情報に基づき無料と記載しています。
 
 mdEditorは[5garashi.com設計事務所](https://www.5garashi.com/)の開発作品です。Markdownを普段どのように読んだり、共有したりしているか、使ってみた感想をお寄せいただけると助かります。不具合や改善案は[GitHub Issues](https://github.com/5garashi/mdEditor/issues)へお願いします。
 
@@ -117,4 +117,4 @@ mdEditorは[5garashi.com設計事務所](https://www.5garashi.com/)の開発作�
 ---
 
 **作成者 / Author**: 5garashi.com設計事務所 / 5garashi.com Design Office
-**最終更新 / Last updated**: 2026-10-16 JST
+**最終更新 / Last updated**: 2026-10-17 JST
