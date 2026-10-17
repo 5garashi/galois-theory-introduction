@@ -3,7 +3,7 @@
 # 概要 / Description: mdEditor用途記事 / mdEditor use-case article
 # 作成者 / Author: 5garashi.com設計事務所 / 5garashi.com Design Office
 # 作成日 / Created: 2026-10-13
-# 版 / Version: 1.4.0
+# 版 / Version: 1.5.0
 # ライセンス / License: MIT
 # SPDX-License-Identifier: MIT
 title: "Markdownを読むためにVS Codeを開くのが面倒で、Windowsアプリを作った"
@@ -13,108 +13,70 @@ topics: ["markdown", "windows", "mermaid", "katex", "pdf"]
 published: true
 ---
 
-
 Markdownファイルの中身をちょっと読みたい。必要なら数行だけ直したい。そのためにVS Codeを開き、図や数式を見るための拡張機能を用意するのが、私には少し面倒でした。
 
 そこで、Markdownを開いて読む、編集する、PDFで共有するためのWindowsアプリ「mdEditor」を作りました。5garashi.com設計事務所の開発作品として、Microsoft Storeで無料で公開しています。
 
 この記事では、実画面と短い技術メモを使って、図・数式の表示、別ウィンドウのプレビュー、PDF保存を紹介します。VS Codeとの速度やメモリ使用量の比較はしていません。ここで書くのは、私が普段のMarkdown閲覧で欲しかった使い方です。
 
-## 2026-10-17更新: 既存の資料を取り込み、整えて渡す
+## 2026-10-18更新：図も、3Dも、動画も
 
-Word文書、Webページ、HTML、メール、CSV・TSV、JSON、Jupyter NotebookなどをMarkdownで開けるようになりました。主な追加は1.0.8、2026-10-17確認時の最新ソースは1.0.10です。
+@[youtube](CAi5q1c0cuo)
 
-![mdEditor 1.0.10の実画面。Markdownの編集欄と図・数式・表を含むプレビュー。](https://5garashi.github.io/mdEditor/assets/app-ja.png)
+[English demo](https://www.youtube.com/watch?v=valiuj76iG4)
 
-取り込んだ文章を編集し、「名前を付けて保存」のファイルの種類でWord・PDF・HTML・PNGを選んで渡せます。Wordには標準の見出しや表のスタイルが入り、図・数式は画像として入ります。画像の貼り付けやドラッグ＆ドロップにも対応しました。
+まず、文書内のSTL立方体を回転・拡大。そのあと図・数式・地図・動画を一つの文書で確認し、編集と共有へ進みます。5garashi.com設計事務所が開発する無料のWindowsアプリmdEditorの使い方を紹介します。
 
-Wordからの取り込みは色や配置を再現するものではありません。Notebookを書き出す際、実行結果は含みません。Webページは「URLを開く」でhttpsのURLを指定します。外部画像は初期設定では読み込まず、確認してから取得します。取得先にはIPアドレスなどが伝わるため、詳しくは[プライバシーポリシー](https://github.com/5garashi/mdEditor/blob/main/PRIVACY.md)を参照してください。
+[ソース1.0.12の実演を見る](https://5garashi.github.io/mdEditor/#demo) · [YouTubeの入口](https://5garashi.github.io/mdEditor/youtube.html)
 
-ソース版1.0.10を実際に操作し、Word・CSV・Webページの取り込み、図と数式の編集、Word・PDF・HTML・PNGへの書き出しを録画しました。[日本語の実演動画](https://www.youtube.com/watch?v=pXQqzLLf8FM)と[英語版](https://www.youtube.com/watch?v=FxBILEFQMQk)を公開しています。PDF保存は「名前を付けて保存」でPDFを選びます。Store配信バイナリでの録画ではなく、Storeの配信版番号は今回確認していません。
+![mdEditorの実画面。左にSTLソース、右に赤い5が付いたクリーム色の3D立方体。](https://5garashi.github.io/mdEditor/assets/hero-3d-1.0.12-ja.png)
 
-## まずはMarkdownを開いて読む
+## 動画と同じサンプルを試す
 
-![mdEditorで編集欄とプレビューを並べた実画面。数式・フローチャート・表が表示されている。](https://5garashi.github.io/mdEditor/assets/app-ja.png)
+[diagram-test.md](https://5garashi.github.io/mdEditor/samples/diagram-test.md)を保存し、mdEditorの「開く」で選びます。上から下へスクロールし、STLの画面をドラッグすると回転、ホイールで拡大・縮小できます。ネット上の画像・動画・OpenStreetMapの詳細地図は、許可したときだけ読み込みます。許可した取得先にはIPアドレスなどが伝わります。構文エラーの表示を試すための例も意図的に含まれています。
 
-左にMarkdown、右に表示結果を並べて使います。見出しや表に加え、Mermaidの図、KaTeXの数式もプレビューできます。読んでいて気づいた箇所は、左側の文章を直して確認します。
+このサンプルはmdEditor向けで、STL・DOT・GeoJSONを含みます。GitHubですべて同じように直接描画されるものではありません。共通のMarkdown文書には、GitHubとmdEditorの両方で描けるMermaidを使います。
 
-[Microsoft Storeから無料で入手](https://apps.microsoft.com/detail/9nww2qrclmhc?hl=ja-JP&gl=JP)できます。[使い方と操作実演](https://5garashi.github.io/mdEditor/)も用意しました。主画面と新しい実演はソース版1.0.10です。別ウィンドウの画像は下記の旧記録です。
+## 書きながら、横で仕上がりを確認する
 
-## 図と数式を含む小さなメモで試す
+見出しを直してプレビューへの反映を確認します。スクロールを連動でき、プレビューを別ウィンドウへ分けたり、ウィンドウ全体へ広げて読んだりできます。今回の録画で実際の2台目ディスプレイへの移動は試験していません。
 
-Markdownはテキストファイルなので、見出しや表を文章と一緒に編集できます。Mermaidの図もテキストで記述でき、KaTeXで表示する数式はTeX記法で記述します。
+## 必要な形式で共有する
 
-- 編集用: `.md`。計算条件や作業手順を後から直す。
-- 配布用: `.pdf`。読み手がMarkdownを表示する環境を用意しなくても読める形で渡す。
+「保存」でMarkdownを残し、「名前を付けて保存」の形式からPDF・Word・HTML・PNGなどを選びます。現行ソース1.0.12はワンクリックのPDF保存にも対応しています。配布前に、出力した文書を開いて図・文字・改ページを確認してください。Wordの色や配置、Notebookの実行結果は再現しません。数式や表の値を自動計算する機能はありません。
 
-PDFは共有する時点の記録です。元のMarkdownを変更しても、以前に保存したPDFは自動更新されません。修正後はPDFも保存し直します。
+## 主な機能
 
-[Microsoft Store](https://apps.microsoft.com/detail/9nww2qrclmhc?hl=ja-JP&gl=JP)からmdEditorを導入し、「開く」で手元のmdファイルを選びます。新しく試す場合は、[図と数式のサンプル](https://5garashi.github.io/mdEditor/samples/quickstart-engineering-note.md)のコピーを使ってください。
+- 書きながら横で仕上がりを確認。スクロールも連動
+- プレビューを 2 台目のディスプレイに。編集中の行を表示
+- ビューアーとしても。プレビューをウィンドウいっぱいに
+- Mermaid・Graphviz の図と数式をオフラインで表示
+- 3D モデル（STL）をマウスで回して確認
+- 地図（GeoJSON）。許可すると OpenStreetMap の地図も
+- 約 40 の言語のコードを色分け。PDF・Word にも色が残る
+- 見出しから目次を作り、ボタン 1 つで新しくする
+- GitHub と同じ注意書き・フロントマター・折りたたみ
+- 文書の中の動画をプレビューで再生
+- プレビューと同じ見た目の PDF をワンクリックで
+- Word・HTML・メール・CSV・JSON・Jupyter Notebook・画像を開ける
+- HTML・PNG・Word・CSV・JSON・Jupyter Notebook・テキストに保存
+- 画像はドロップや貼り付けで、そのまま文書に
+- 安全な保存と、異常終了からの自動復元
+- Shift_JIS・EUC-JP・UTF-8 のファイルを正しく開ける
+- ネット上の画像・動画・地図は、許可したときだけ読み込む
+- 広告なし、計測なし、アカウント不要
+- キーボードで全操作。ショートカットも変更できる
+- 画面読み上げ・文書の読み上げ・ダークモードに対応
 
-以下は、抵抗の消費電力を記録する例です。`$...$` が文章中の数式、`$$...$$` が独立した数式です。Mermaidのコードブロックは図としてプレビューされます。
+## 確認範囲と出典
 
-````markdown
-# 抵抗の消費電力
+新動画はソース版1.0.12（8ab7cef）を収録し、字幕とBGM「Light Steps」を付けています。Store配信版番号は未確認です。7形式の取り込み、PDF保存、図・数式、地図・動画、3Dの回転を録画時に確認しました。全キー操作、異常終了からの復元、全形式の書き出し、読み上げ環境を網羅的に再試験したものではありません。別窓紹介は背景を映さないため、安定した実録画1秒をアプリのウィンドウだけに切り出して繰り返しています。
 
-条件は $R=100\,\Omega$、$V=10\,\mathrm{V}$ とする。
+[PDF・画像・サンプル](https://5garashi.github.io/mdEditor/resources.html) · [アプリのプライバシー](https://github.com/5garashi/mdEditor/blob/main/PRIVACY.md)
 
-$$P=\frac{V^2}{R}=\frac{10^2}{100}=1\,\mathrm{W}$$
-
-```mermaid
-flowchart LR
- A[条件を整理] --> B[計算] --> C[仕様を確認]
- classDef default fill:#FFFDF2,stroke:#385723,color:#385723
- linkStyle default stroke:#385723
-```
-
-| 電圧 | 抵抗 | 消費電力 |
-| --- | --- | --- |
-| 5 V | 100 Ω | 0.25 W |
-| 10 V | 100 Ω | 1.00 W |
-````
-
-数式と表は自分で計算した結果の記載です。mdEditorは数値を自動計算しません。電圧を変える場合、文章・式・表の結果を自分で再計算して書き換えてください。この例だけで実際の部品選定を決めるものではありません。
-
-### 文章と図を編集する
-
-最初の見出しを「抵抗の消費電力の記録」に変え、右側のプレビューにも反映されることを確認します。次に図の「仕様を確認」を「測定で検証」に変えてみます。
-
-図の見た目を直接操作するのではなく、元になる文字を修正する操作です。文章と図の変更履歴を同じmdファイルで残せることが、この形式の扱いやすさです。
-
-## 読む画面を別ウィンドウに出す
-
-プレビュー側の「別ウィンドウで表示」を選ぶと、読む画面を本体から分けられます。ほかの作業と並べたり、別のディスプレイに置いたりして使います。単に読みたいときは、プレビューをウィンドウ全体に広げる操作もあります。
-
-以下は、本体と別プレビューの実画面です。ソース版1.0.5で取得しました。Storeの提供版にこのボタンがない場合は、その版の機能・更新状況を確認してください。別ウィンドウ表示と、ウィンドウ全体のプレビュー表示はそれぞれ異なる操作です。
-
-![本体の編集ウィンドウの実画面。Markdownだけを広く表示している。](https://5garashi.github.io/mdEditor/multichannel/illustrations/window-editor-ja.png)
-
-![別ウィンドウのプレビューの実画面。図・数式・表が表示されている。](https://5garashi.github.io/mdEditor/multichannel/illustrations/window-preview-ja.png)
-
-## PDFにして渡す
-
-1. 「保存」で編集したMarkdownを保存する。
-2. 「名前を付けて保存」でファイルの種類にPDFを選び、保存先を指定する。
-3. 保存したPDFを開く。
-4. 見出し・図・数式・表が含まれること、文章の切れや不要なページがないかを確認する。
-
-旧ソース版1.0.5では、短い技術メモのPDFに末尾空白ページが付く場合がありました（公式変更履歴では1.0.6で修正）。本文・図・数式・表は出力されていますが、配布前にページ数を確認してください。PDFの自動更新や、数値の自動計算は行われません。
-
-新しい版では、文書内の外部画像は初期設定で確認後に読み込み、その画像サーバーへの通信が発生します。本稿のサンプルには外部画像がなく、図・数式はアプリに同梱された部品で描画します。[アプリのプライバシーポリシー](https://github.com/5garashi/mdEditor/blob/main/PRIVACY.md)も参照してください。
-
-## 参考資料と作成者
-
-- [Mermaid公式資料](https://mermaid.js.org/): テキストから図を描く記法。
-- [KaTeX公式資料](https://katex.org/docs/supported.html): 表示できる数式の記法。
-- [mdEditorのソースと使い方](https://github.com/5garashi/mdEditor)。
-
-取り込み・編集・書き出しは、変更していないソース版1.0.10で2026-10-17に録画確認しました。別ウィンドウの画像は1.0.5の記録です。Storeの提供版番号・認定状況は未確認です。価格は所有者の確認と掲載情報に基づき無料と記載しています。
-
-mdEditorは[5garashi.com設計事務所](https://www.5garashi.com/)の開発作品です。Markdownを普段どのように読んだり、共有したりしているか、使ってみた感想をお寄せいただけると助かります。不具合や改善案は[GitHub Issues](https://github.com/5garashi/mdEditor/issues)へお願いします。
-
-デザイン基準出典: [Design Office Identity 4.15.0](https://5garashi.github.io/5garashi-identity/)、5garashi.com設計事務所 / 5garashi.com Design Office。公式ロゴはCC BY-ND 4.0、本文と記法例はMIT。
+Design reference: [Design Office Identity 4.20.0](https://5garashi.github.io/5garashi-identity/). App, article and notation examples: MIT. Official logos: CC BY-ND 4.0.
 
 ---
 
 **作成者 / Author**: 5garashi.com設計事務所 / 5garashi.com Design Office
-**最終更新 / Last updated**: 2026-10-17 JST
+**最終更新 / Last updated**: 2026-10-18 JST
