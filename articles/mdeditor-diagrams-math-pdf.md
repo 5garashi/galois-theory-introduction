@@ -3,7 +3,7 @@
 # 概要 / Description: mdEditor用途記事 / mdEditor use-case article
 # 作成者 / Author: 5garashi.com設計事務所 / 5garashi.com Design Office
 # 作成日 / Created: 2026-10-13
-# 版 / Version: 1.6.0
+# 版 / Version: 1.7.0
 # ライセンス / License: MIT
 # SPDX-License-Identifier: MIT
 title: "Markdownを読むためにVS Codeを開くのが面倒で、Windowsアプリを作った"
@@ -19,17 +19,21 @@ Markdownファイルの中身をちょっと読みたい。必要なら数行だ
 
 この記事では、実画面と短い技術メモを使って、図・数式の表示、別ウィンドウのプレビュー、PDF保存を紹介します。VS Codeとの速度やメモリ使用量の比較はしていません。ここで書くのは、私が普段のMarkdown閲覧で欲しかった使い方です。
 
-## 2026-10-20更新：画像をドロップ、サイズと中央揃え
+## 2026-10-23更新：簡体字中国語・コピーから新規文書
 
-@[youtube](FCAnLgFUx9Q)
+@[youtube](xQ4febIk19I)
 
-[English demo](https://www.youtube.com/watch?v=ELYbCiZKXMc)
+[English demo](https://www.youtube.com/watch?v=mRyXDg3urwc) · [简体中文演示](https://www.youtube.com/watch?v=pLHtnbmDRi8)
+
+今回の追加は、簡体字中国語の画面・サンプル・読み上げ、クリップボードからの新規文書作成、起動処理の改善です。クリップボード用の起動キーは任意設定で、設定画面で確認した後にショートカットを作ります。起動時間はPC環境によって変わります。
+
+従来の強みであるライブプレビュー、オフラインのMermaid・Graphviz・数式、回転する3D、画像のサイズ・中央揃え、PDF・Word・ZIPでの共有も、今回の実演と資料で紹介します。広告なし・計測なし・アカウント不要です。
 
 まず、文書内のSTL立方体を回転・拡大。そのあと図・数式・地図・動画を一つの文書で確認し、編集と共有へ進みます。5garashi.com設計事務所が開発する無料のWindowsアプリmdEditorの使い方を紹介します。
 
-[ソース1.0.14の実演を見る](https://5garashi.github.io/mdEditor/#demo) · [YouTubeの入口](https://5garashi.github.io/mdEditor/youtube.html)
+[ソース1.0.15の実演を見る](https://5garashi.github.io/mdEditor/#demo) · [YouTubeの入口](https://5garashi.github.io/mdEditor/youtube.html)
 
-![mdEditorの実画面。左にSTLソース、右に赤い5が付いたクリーム色の3D立方体。](https://5garashi.github.io/mdEditor/assets/hero-3d-1.0.14-ja.png)
+![mdEditorの実画面。左にSTLソース、右に赤い5が付いたクリーム色の3D立方体。](https://5garashi.github.io/mdEditor/assets/hero-3d-1.0.15-ja.png)
 
 ## 動画と同じサンプルを試す
 
@@ -45,11 +49,11 @@ Markdownファイルの中身をちょっと読みたい。必要なら数行だ
 
 画像を編集欄へドロップし、画像の調整で幅50％・中央揃えを選びます。文書と使用した画像は、配布用ZIPでまとめて渡せます。
 
-![画像の調整で幅50％・中央揃えにした実画面。](https://5garashi.github.io/mdEditor/assets/image-adjust-1.0.14-ja.png)
+![画像の調整で幅50％・中央揃えにした実画面。](https://5garashi.github.io/mdEditor/assets/image-adjust-1.0.15-ja.png)
 
 ## 必要な形式で共有する
 
-「保存」でMarkdownを残し、「名前を付けて保存」の形式からPDF・Word・HTML・PNGなどを選びます。現行ソース1.0.14はワンクリックのPDF保存にも対応しています。配布前に、出力した文書を開いて図・文字・改ページを確認してください。Wordの色や配置、Notebookの実行結果は再現しません。数式や表の値を自動計算する機能はありません。
+「保存」でMarkdownを残し、「名前を付けて保存」の形式からPDF・Word・HTML・PNGなどを選びます。現行ソース1.0.15はワンクリックのPDF保存にも対応しています。配布前に、出力した文書を開いて図・文字・改ページを確認してください。Wordの色や配置、Notebookの実行結果は再現しません。数式や表の値を自動計算する機能はありません。
 
 ## 主な機能
 
@@ -76,7 +80,7 @@ Markdownファイルの中身をちょっと読みたい。必要なら数行だ
 
 ## 確認範囲と出典
 
-新動画はソース版1.0.14（ローカル更新版）を収録し、字幕とBGM「Light Steps」を付けています。収録はソースビルドです。7形式の取り込み、PDF保存、図・数式、地図・動画、3Dの回転を録画時に確認しました。全キー操作、異常終了からの復元、全形式の書き出し、読み上げ環境を網羅的に再試験したものではありません。背景を覆って収録し、OSのファイル選択ダイアログは編集で除いています。
+新動画はソース版1.0.15（ローカル更新版）を収録し、字幕とBGM「Light Steps」を付けています。収録はソースビルドです。7形式の取り込み、PDF保存、図・数式、地図・動画、3Dの回転を録画時に確認しました。全キー操作、異常終了からの復元、全形式の書き出し、読み上げ環境を網羅的に再試験したものではありません。背景を覆って収録し、OSのファイル選択ダイアログは編集で除いています。
 
 [PDF・画像・サンプル](https://5garashi.github.io/mdEditor/resources.html) · [アプリのプライバシー](https://github.com/5garashi/mdEditor/blob/main/PRIVACY.md)
 
@@ -85,4 +89,4 @@ Design reference: [Design Office Identity 4.20.0](https://5garashi.github.io/5ga
 ---
 
 **作成者 / Author**: 5garashi.com設計事務所 / 5garashi.com Design Office
-**最終更新 / Last updated**: 2026-10-20 JST
+**最終更新 / Last updated**: 2026-10-23 JST
