@@ -3,7 +3,7 @@
 # 概要 / Description: mdEditor用途記事 / mdEditor use-case article
 # 作成者 / Author: 5garashi.com設計事務所 / 5garashi.com Design Office
 # 作成日 / Created: 2026-10-13
-# 版 / Version: 1.8.0
+# 版 / Version: 1.9.0
 # ライセンス / License: MIT
 # SPDX-License-Identifier: MIT
 title: "Markdownを読むためにVS Codeを開くのが面倒で、Windowsアプリを作った"
@@ -13,6 +13,8 @@ topics: ["markdown", "windows", "mermaid", "katex", "pdf"]
 published: true
 ---
 
+@[youtube](AhCp_Erzfow)
+
 Markdownファイルの中身をちょっと読みたい。必要なら数行だけ直したい。そのためにVS Codeを開き、図や数式を見るための拡張機能を用意するのが、私には少し面倒でした。
 
 そこで、Markdownを開いて読む、編集する、PDFで共有するためのWindowsアプリ「mdEditor」を作りました。5garashi.com設計事務所の開発作品として、Microsoft Storeで無料で公開しています。
@@ -20,8 +22,6 @@ Markdownファイルの中身をちょっと読みたい。必要なら数行だ
 この記事では、実画面と短い技術メモを使って、図・数式の表示、別ウィンドウのプレビュー、PDF保存を紹介します。VS Codeとの速度やメモリ使用量の比較はしていません。ここで書くのは、私が普段のMarkdown閲覧で欲しかった使い方です。
 
 ## 2026-11-01更新：PDFもAIチャットの回答も、Markdownで
-
-@[youtube](AhCp_Erzfow)
 
 [English demo](https://www.youtube.com/watch?v=AkYYP5qnGDU) · [简体中文演示](https://www.youtube.com/watch?v=V60PrM1Y6pA)
 
