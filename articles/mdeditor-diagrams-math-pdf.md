@@ -3,7 +3,7 @@
 # 概要 / Description: mdEditor用途記事 / mdEditor use-case article
 # 作成者 / Author: 5garashi.com設計事務所 / 5garashi.com Design Office
 # 作成日 / Created: 2026-10-13
-# 版 / Version: 1.7.0
+# 版 / Version: 1.8.0
 # ライセンス / License: MIT
 # SPDX-License-Identifier: MIT
 title: "Markdownを読むためにVS Codeを開くのが面倒で、Windowsアプリを作った"
@@ -19,21 +19,27 @@ Markdownファイルの中身をちょっと読みたい。必要なら数行だ
 
 この記事では、実画面と短い技術メモを使って、図・数式の表示、別ウィンドウのプレビュー、PDF保存を紹介します。VS Codeとの速度やメモリ使用量の比較はしていません。ここで書くのは、私が普段のMarkdown閲覧で欲しかった使い方です。
 
-## 2026-10-23更新：簡体字中国語・コピーから新規文書
+## 2026-11-01更新：PDFもAIチャットの回答も、Markdownで
 
-@[youtube](xQ4febIk19I)
+@[youtube](AhCp_Erzfow)
 
-[English demo](https://www.youtube.com/watch?v=mRyXDg3urwc) · [简体中文演示](https://www.youtube.com/watch?v=pLHtnbmDRi8)
+[English demo](https://www.youtube.com/watch?v=AkYYP5qnGDU) · [简体中文演示](https://www.youtube.com/watch?v=V60PrM1Y6pA)
 
-今回の追加は、簡体字中国語の画面・サンプル・読み上げ、クリップボードからの新規文書作成、起動処理の改善です。クリップボード用の起動キーは任意設定で、設定画面で確認した後にショートカットを作ります。起動時間はPC環境によって変わります。
+PDFとWordをMarkdownとして開けます。AIチャットの回答も、書き方の癖を直して表示。プレビューどおりのPDFに、ワンクリックで保存できます。
 
-従来の強みであるライブプレビュー、オフラインのMermaid・Graphviz・数式、回転する3D、画像のサイズ・中央揃え、PDF・Word・ZIPでの共有も、今回の実演と資料で紹介します。広告なし・計測なし・アカウント不要です。
+書きながら横で仕上がりを確認。Mermaid・Graphviz・数式・3Dモデル・地図をオフラインで表示。書き間違いには波線、表は Ctrl+Shift+W で整えます。
 
-まず、文書内のSTL立方体を回転・拡大。そのあと図・数式・地図・動画を一つの文書で確認し、編集と共有へ進みます。5garashi.com設計事務所が開発する無料のWindowsアプリmdEditorの使い方を紹介します。
+回転する3Dモデルから始まり、AIチャットの回答の修正、PDFの取り込みと書き出し、書き方の確認を実演。そのあと、主な機能と図のサンプルを上から下へ紹介します。
 
-[ソース1.0.15の実演を見る](https://5garashi.github.io/mdEditor/#demo) · [YouTubeの入口](https://5garashi.github.io/mdEditor/youtube.html)
+Windows用・無料。PDFの取り込みはできる範囲での変換で、段組みやスキャンしたPDFは元に戻りません。AIチャットの回答は、できる範囲で再現します。収録はソースビルド1.0.20です。
 
-![mdEditorの実画面。左にSTLソース、右に赤い5が付いたクリーム色の3D立方体。](https://5garashi.github.io/mdEditor/assets/hero-3d-1.0.15-ja.png)
+開発と動画の制作に、AI（Claude・Codex）の支援を受けています。BGMはCodexで作曲・音源生成したものです。
+
+図・数式・地図・動画を一つの文書で確認し、そのまま編集・共有できます。5garashi.com設計事務所が開発する無料のWindowsアプリmdEditorの使い方を紹介します。
+
+[ソース1.0.20の実演を見る](https://5garashi.github.io/mdEditor/#demo) · [YouTubeの入口](https://5garashi.github.io/mdEditor/youtube.html)
+
+![mdEditorの実画面。プレビューに、赤い台の上の緑の星形の3Dモデル。](https://5garashi.github.io/mdEditor/assets/hero-3d-1.0.20-ja.png)
 
 ## 動画と同じサンプルを試す
 
@@ -53,34 +59,40 @@ Markdownファイルの中身をちょっと読みたい。必要なら数行だ
 
 ## 必要な形式で共有する
 
-「保存」でMarkdownを残し、「名前を付けて保存」の形式からPDF・Word・HTML・PNGなどを選びます。現行ソース1.0.15はワンクリックのPDF保存にも対応しています。配布前に、出力した文書を開いて図・文字・改ページを確認してください。Wordの色や配置、Notebookの実行結果は再現しません。数式や表の値を自動計算する機能はありません。
+「保存」でMarkdownを残し、「名前を付けて保存」の形式からPDF・Word・HTML・PNGなどを選びます。1.0.20はワンクリックのPDF保存（ページ番号と画面読み上げ用のタグ付き）に対応し、PDFやWordをMarkdownとして開くこともできます（できる範囲での変換）。配布前に、出力した文書を開いて図・文字・改ページを確認してください。Wordの色や配置、Notebookの実行結果は再現しません。数式や表の値を自動計算する機能はありません。
 
 ## 主な機能
 
+- PDF や Word を Markdown として開ける。PC の中だけで変換
+- PDF から見出し・箇条書き・表・コード・画像を取り出す
+- ワンクリックで PDF に保存。プレビューと同じ見た目のまま
+- Word・HTML・PNG・CSV・JSON・テキスト・ZIP にも保存
 - 書きながら横で仕上がりを確認。スクロールも連動
+- AI のチャットの Markdown も、できる範囲で再現
 - プレビューを 2 台目のディスプレイに。編集中の行を表示
-- ビューアーとしても。プレビューをウィンドウいっぱいに
+- 書くそばから色分けし、書き間違いに波線を引く
+- 太字・斜体・リスト・表・見出しの番号をキー 1 つで
 - Mermaid・Graphviz の図と数式をオフラインで表示
-- 3D モデル（STL）をマウスで回して確認
-- 地図（GeoJSON）。許可すると OpenStreetMap の地図も
-- 約 40 の言語のコードを色分け。PDF・Word にも色が残る
-- 見出しから目次を作り、ボタン 1 つで新しくする
+- 3D モデル（STL）と地図（GeoJSON）をオフラインで表示
+- 約 40 の言語のコードを色分け。見出しから目次も作る
 - GitHub と同じ注意書き・フロントマター・折りたたみ
-- 文書の中の動画をプレビューで再生
-- プレビューと同じ見た目の PDF をワンクリックで
-- Word・HTML・メール・CSV・JSON・Jupyter Notebook・画像を開ける
-- HTML・PNG・Word・CSV・JSON・Jupyter Notebook・テキストに保存・配布用ZIP
-- 画像をドロップ・貼り付け。サイズと中央揃えを調整
+- HTML・メール・CSV・JSON・Jupyter Notebook・画像も開ける
+- 画像はドロップや貼り付けで、そのまま文書に
+- コピーしてキーを押すと、新しい文書として開く
 - 安全な保存と、異常終了からの自動復元
 - Shift_JIS・EUC-JP・UTF-8 のファイルを正しく開ける
-- ネット上の画像・動画・地図は、許可したときだけ読み込む
-- 広告なし、計測なし、アカウント不要
-- キーボードで全操作。ショートカットも変更できる
-- 画面読み上げ・文書の読み上げ・ダークモードに対応
+- 広告なし、計測なし、アカウント不要。ネット上の内容は許可したときだけ
+- キーボード操作・画面読み上げ・文書の読み上げ・ダークモード
 
 ## 確認範囲と出典
 
-新動画はソース版1.0.15（ローカル更新版）を収録し、字幕とBGM「Light Steps」を付けています。収録はソースビルドです。7形式の取り込み、PDF保存、図・数式、地図・動画、3Dの回転を録画時に確認しました。全キー操作、異常終了からの復元、全形式の書き出し、読み上げ環境を網羅的に再試験したものではありません。背景を覆って収録し、OSのファイル選択ダイアログは編集で除いています。
+新動画はソース版1.0.20を収録し、字幕とBGM「Light Steps」を付けています。AIチャットの回答の修正、PDFの取り込みと書き出し、書き方の確認、表の整形、図・数式・3D・地図・動画の表示を、録画時に確認しました。全キー操作、異常終了からの復元、全形式の書き出し、読み上げ環境を網羅的に再試験したものではありません。背景を覆って収録し、OSのファイル選択ダイアログは編集で除いています。
+
+BGM：「Light Steps」5garashi.com設計事務所（作曲・音源生成：Codex）、CC BY 4.0。抜粋してくり返し、最後をフェードアウト。  
+https://5garashi.github.io/5garashi-identity/ / https://creativecommons.org/licenses/by/4.0/  
+サンプルの映画：「Big Buck Bunny」© 2008 Blender Foundation、CC BY 3.0。サンプル文書の中で再生（編集なし）。  
+https://peach.blender.org/ / https://creativecommons.org/licenses/by/3.0/  
+地図データ：© OpenStreetMap contributors（ODbL）https://www.openstreetmap.org/copyright
 
 [PDF・画像・サンプル](https://5garashi.github.io/mdEditor/resources.html) · [アプリのプライバシー](https://github.com/5garashi/mdEditor/blob/main/PRIVACY.md)
 
@@ -89,4 +101,4 @@ Design reference: [Design Office Identity 4.20.0](https://5garashi.github.io/5ga
 ---
 
 **作成者 / Author**: 5garashi.com設計事務所 / 5garashi.com Design Office
-**最終更新 / Last updated**: 2026-10-23 JST
+**最終更新 / Last updated**: 2026-11-01 JST
