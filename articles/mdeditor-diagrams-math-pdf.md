@@ -3,7 +3,7 @@
 # 概要 / Description: mdEditor用途記事 / mdEditor use-case article
 # 作成者 / Author: 5garashi.com設計事務所 / 5garashi.com Design Office
 # 作成日 / Created: 2026-10-13
-# 版 / Version: 1.9.0
+# 版 / Version: 1.10.0
 # ライセンス / License: MIT
 # SPDX-License-Identifier: MIT
 title: "Markdownを読むためにVS Codeを開くのが面倒で、Windowsアプリを作った"
@@ -13,7 +13,7 @@ topics: ["markdown", "windows", "mermaid", "katex", "pdf"]
 published: true
 ---
 
-@[youtube](AhCp_Erzfow)
+@[youtube](S3PKCQcHOWs)
 
 Markdownファイルの中身をちょっと読みたい。必要なら数行だけ直したい。そのためにVS Codeを開き、図や数式を見るための拡張機能を用意するのが、私には少し面倒でした。
 
@@ -21,25 +21,25 @@ Markdownファイルの中身をちょっと読みたい。必要なら数行だ
 
 この記事では、実画面と短い技術メモを使って、図・数式の表示、別ウィンドウのプレビュー、PDF保存を紹介します。VS Codeとの速度やメモリ使用量の比較はしていません。ここで書くのは、私が普段のMarkdown閲覧で欲しかった使い方です。
 
-## 2026-11-01更新：PDFもAIチャットの回答も、Markdownで
+## 2026-11-07更新：AIが書く数式も、Markdownで
 
-[English demo](https://www.youtube.com/watch?v=AkYYP5qnGDU) · [简体中文演示](https://www.youtube.com/watch?v=V60PrM1Y6pA)
+[English demo](https://www.youtube.com/watch?v=yJPh0SIcqGA) · [简体中文演示](https://www.youtube.com/watch?v=OfB-gwSVhyI)
 
-PDFとWordをMarkdownとして開けます。AIチャットの回答も、書き方の癖を直して表示。プレビューどおりのPDFに、ワンクリックで保存できます。
+AIのチャットが書く数式の表示を強化しました。`$$` の行から書き始めた複数行の数式、閉じる `$` の前に空白がある `$x $`、HTMLの中に文字で書いた数式も、数式として表示します。Markdownの中に書いたSVGの図も表示し、PDF・Wordにも入れます。
 
-書きながら横で仕上がりを確認。Mermaid・Graphviz・数式・3Dモデル・地図をオフラインで表示。書き間違いには波線、表は Ctrl+Shift+W で整えます。
+PDFとWordをMarkdownとして開き、直したらPDFやWordで渡せます。Mermaid・Graphviz・数式・3Dモデル・地図をオフラインで表示。広告なし・計測なし・アカウント不要です。
 
-回転する3Dモデルから始まり、AIチャットの回答の修正、PDFの取り込みと書き出し、書き方の確認を実演。そのあと、主な機能と図のサンプルを上から下へ紹介します。
+3Dモデルの拡大・回転から始まり、英語の論文の数式を、TeXの原文とプレビューを並べてスクロール。そのあと、主な機能（key-features.md）と図のサンプル（diagram-test.md）を上から下へ紹介します。
 
-Windows用・無料。PDFの取り込みはできる範囲での変換で、段組みやスキャンしたPDFは元に戻りません。AIチャットの回答は、できる範囲で再現します。収録はソースビルド1.0.20です。
+Windows用・無料。AIのチャットの回答は、できる範囲で再現します（すべての書き方を直せるわけではありません）。PDFの取り込みもできる範囲での変換で、段組みやスキャンしたPDFは元に戻りません。収録は、Microsoft Storeに出した1.0.22と同じコミットからのビルドです。
 
 開発と動画の制作に、AI（Claude・Codex）の支援を受けています。BGMはCodexで作曲・音源生成したものです。
 
 図・数式・地図・動画を一つの文書で確認し、そのまま編集・共有できます。5garashi.com設計事務所が開発する無料のWindowsアプリmdEditorの使い方を紹介します。
 
-[ソース1.0.20の実演を見る](https://5garashi.github.io/mdEditor/#demo) · [YouTubeの入口](https://5garashi.github.io/mdEditor/youtube.html)
+[1.0.22の実演を見る](https://5garashi.github.io/mdEditor/#demo) · [YouTubeの入口](https://5garashi.github.io/mdEditor/youtube.html)
 
-![mdEditorの実画面。プレビューに、赤い台の上の緑の星形の3Dモデル。](https://5garashi.github.io/mdEditor/assets/hero-3d-1.0.20-ja.png)
+![mdEditorの実画面。プレビューに、赤い台の上の緑の星形の3Dモデルを拡大して表示。](https://5garashi.github.io/mdEditor/assets/hero-3d-1.0.22-ja.png)
 
 ## 動画と同じサンプルを試す
 
@@ -59,7 +59,7 @@ Windows用・無料。PDFの取り込みはできる範囲での変換で、段�
 
 ## 必要な形式で共有する
 
-「保存」でMarkdownを残し、「名前を付けて保存」の形式からPDF・Word・HTML・PNGなどを選びます。1.0.20はワンクリックのPDF保存（ページ番号と画面読み上げ用のタグ付き）に対応し、PDFやWordをMarkdownとして開くこともできます（できる範囲での変換）。配布前に、出力した文書を開いて図・文字・改ページを確認してください。Wordの色や配置、Notebookの実行結果は再現しません。数式や表の値を自動計算する機能はありません。
+「保存」でMarkdownを残し、「名前を付けて保存」の形式からPDF・Word・HTML・PNGなどを選びます。1.0.22はワンクリックのPDF保存（ページ番号と画面読み上げ用のタグ付き）に対応し、PDFやWordをMarkdownとして開くこともできます（できる範囲での変換）。配布前に、出力した文書を開いて図・文字・改ページを確認してください。Wordの色や配置、Notebookの実行結果は再現しません。数式や表の値を自動計算する機能はありません。
 
 ## 主な機能
 
@@ -86,19 +86,21 @@ Windows用・無料。PDFの取り込みはできる範囲での変換で、段�
 
 ## 確認範囲と出典
 
-新動画はソース版1.0.20を収録し、字幕とBGM「Light Steps」を付けています。AIチャットの回答の修正、PDFの取り込みと書き出し、書き方の確認、表の整形、図・数式・3D・地図・動画の表示を、録画時に確認しました。全キー操作、異常終了からの復元、全形式の書き出し、読み上げ環境を網羅的に再試験したものではありません。背景を覆って収録し、OSのファイル選択ダイアログは編集で除いています。
+新動画は、Microsoft Storeに出した1.0.22と同じコミットからのビルドを収録し、字幕とBGM「Light Steps」を付けています。3Dモデルの拡大・回転、数式の表示と左右のスクロールの連動、図・数式・3D・地図・動画の表示を、録画時に確認しました。全キー操作、異常終了からの復元、全形式の書き出し、読み上げ環境を網羅的に再試験したものではありません。背景を覆って収録し、OSのファイル選択ダイアログは編集で除いています。
 
-BGM：「Light Steps」5garashi.com設計事務所（作曲・音源生成：Codex）、CC BY 4.0。抜粋してくり返し、最後をフェードアウト。  
+BGM：「Light Steps」5garashi.com設計事務所（作曲・音源生成：Codex）、CC BY 4.0。抜粋してくり返し、最初と最後をフェード。  
 https://5garashi.github.io/5garashi-identity/ / https://creativecommons.org/licenses/by/4.0/  
+数式の文書：zeroPhase「Observation Limits and the Undifferentiated Origin」5garashi.com設計事務所  
+https://5garashi.github.io/zeroPhase/  
 サンプルの映画：「Big Buck Bunny」© 2008 Blender Foundation、CC BY 3.0。サンプル文書の中で再生（編集なし）。  
 https://peach.blender.org/ / https://creativecommons.org/licenses/by/3.0/  
 地図データ：© OpenStreetMap contributors（ODbL）https://www.openstreetmap.org/copyright
 
 [PDF・画像・サンプル](https://5garashi.github.io/mdEditor/resources.html) · [アプリのプライバシー](https://github.com/5garashi/mdEditor/blob/main/PRIVACY.md)
 
-Design reference: [Design Office Identity 4.20.0](https://5garashi.github.io/5garashi-identity/). App, article and notation examples: MIT. Official logos: CC BY-ND 4.0.
+Design reference: [Design Office Identity 4.25.0](https://5garashi.github.io/5garashi-identity/). App, article and notation examples: MIT. Official logos: CC BY-ND 4.0.
 
 ---
 
 **作成者 / Author**: 5garashi.com設計事務所 / 5garashi.com Design Office
-**最終更新 / Last updated**: 2026-11-01 JST
+**最終更新 / Last updated**: 2026-11-07 JST
